@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qrapp/reg.dart';
+import 'package:qrapp/scan.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -12,21 +13,24 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
+      body:
+      Center(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Login', style: TextStyle(fontSize: 22)),
+            Text('Login', style: TextStyle(fontSize: 44,fontWeight: FontWeight.bold), ),
+            SizedBox(height: 150,),
             TextField(
+              maxLength: 10,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: 'Enter your Roll no.',
+                labelText: 'Enter your Roll no.',
               ),
             ),
             SizedBox(height: 24,),
             TextField(
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: 'Enter your password',
+                labelText: 'Enter your password',
               ),
             ),
             SizedBox(height: 24,),
@@ -34,7 +38,12 @@ class _LoginState extends State<Login> {
               style: ButtonStyle(
                 foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
               ),
-              onPressed: () { },
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const Scan()),
+                );
+              },
               child: Text('login'),
             ),
             TextButton(
@@ -49,10 +58,9 @@ class _LoginState extends State<Login> {
               },
               child: Text('Don\'t have an account'),
             ),
-
           ],
-        ),
-      ),
+    ),
+    )
     );
   }
 }
