@@ -25,8 +25,9 @@ class _ScanState extends State<Scan> {
               ),
             ),
           ),
-          QrImage(
+          QrImageView(
             data: '1234567890',
+            version: QrVersions.auto,
             size: 200.0,
           ),
         ],
