@@ -29,11 +29,13 @@ class _RegState extends State<Reg> {
           'rollno': _rollno.text,
           'password': _password.text,
         }));
+    var data=jsonDecode(response.body);
     if (response.statusCode == 200) {
+      print('success');
       Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
     } else {
       ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text("success")));
+          .showSnackBar(SnackBar(content: Text(data['message'])));
     }
   }
 
