@@ -8,57 +8,92 @@ class Reg extends StatefulWidget {
 }
 
 class _RegState extends State<Reg> {
+  final _name = TextEditingController();
+  final _emailid = TextEditingController();
+  final _rollno = TextEditingController();
+  final _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.teal,
         body: Center(
-            child: Column(
-      children: [
-        Text('Registration', style: TextStyle(fontSize: 22)),
-        TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Enter your name.',
+            child: Container(
+          color: Colors.black,
+          height: 700,
+          width: 500,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Registration',
+                  style: TextStyle(
+                      fontSize: 44,
+                      color: Colors.teal,
+                      fontWeight: FontWeight.bold)),
+              SizedBox(
+                height: 40,
+              ),
+              SizedBox(
+                width: 400,
+                child: TextField(
+                  controller: _name,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter your name.',
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              SizedBox(
+                width: 400,
+                child: TextField(
+                  controller: _emailid,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter your email id.',
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              SizedBox(
+                width: 400,
+                child: TextField(
+                  controller: _rollno,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter your Roll no.',
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              SizedBox(
+                width: 400,
+                child: TextField(
+                  controller: _password,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Enter your Password.',
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 24,
+              ),
+              TextButton(
+                style: ButtonStyle(
+                  foregroundColor:
+                      MaterialStateProperty.all<Color>(Colors.blue),
+                ),
+                onPressed: () {},
+                child: Text('Register'),
+              ),
+            ],
           ),
-        ),
-        SizedBox(
-          height: 24,
-        ),
-        TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Enter your email id.',
-          ),
-        ),
-        SizedBox(
-          height: 24,
-        ),
-        TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Enter your Roll no.',
-          ),
-        ),
-        SizedBox(
-          height: 24,
-        ),
-        TextField(
-          decoration: InputDecoration(
-            border: OutlineInputBorder(),
-            hintText: 'Enter your Password.',
-          ),
-        ),
-        SizedBox(
-          height: 24,
-        ),
-        TextButton(
-          style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-          ),
-          onPressed: () {},
-          child: Text('Register'),
-        ),
-      ],
-    )));
+        )));
   }
 }
