@@ -12,6 +12,13 @@ class _RegState extends State<Reg> {
   final _emailid = TextEditingController();
   final _rollno = TextEditingController();
   final _password = TextEditingController();
+  void register() {
+    print(_name.text);
+    print(_emailid.text);
+    print(_rollno.text);
+    print(_password.text);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,10 +42,12 @@ class _RegState extends State<Reg> {
               SizedBox(
                 width: 400,
                 child: TextField(
+                  
                   controller: _name,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Enter your name.',
+                    labelStyle:TextStyle(color: Colors.white),
                   ),
                 ),
               ),
@@ -89,7 +98,9 @@ class _RegState extends State<Reg> {
                   foregroundColor:
                       MaterialStateProperty.all<Color>(Colors.blue),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  register();
+                },
                 child: Text('Register'),
               ),
             ],
