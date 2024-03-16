@@ -1,5 +1,7 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
+import 'package:flutter/material.dart';
+import 'package:http/http.dart'as http;
 class Reg extends StatefulWidget {
   const Reg({Key? key}) : super(key: key);
 
@@ -12,8 +14,20 @@ class _RegState extends State<Reg> {
   final _emailid = TextEditingController();
   final _rollno = TextEditingController();
   final _password = TextEditingController();
-  void register() {
+
+  void register() async{
     Uri uri =Uri.parse('https://scnner-web.onrender.com/api/register');
+    var response = await http.post(uri,
+    headers: <String,String>{
+      'Content-Type':'application/json; charset=UTF-8',
+    },
+    body: jsonEncode({
+      'name':_name.text,
+      'email':_emailid.text,
+      'rollno':_rollno.text,
+      'password':_password.text,
+    }));
+
     // print(_name.text);
     // print(_emailid.text);
     // print(_rollno.text);
