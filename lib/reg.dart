@@ -13,10 +13,11 @@ class _RegState extends State<Reg> {
   final _rollno = TextEditingController();
   final _password = TextEditingController();
   void register() {
-    print(_name.text);
-    print(_emailid.text);
-    print(_rollno.text);
-    print(_password.text);
+    Uri uri =Uri.parse('https://scnner-web.onrender.com/api/register');
+    // print(_name.text);
+    // print(_emailid.text);
+    // print(_rollno.text);
+    // print(_password.text);
   }
 
   @override
@@ -42,7 +43,7 @@ class _RegState extends State<Reg> {
               SizedBox(
                 width: 400,
                 child: TextField(
-                  
+
                   controller: _name,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
