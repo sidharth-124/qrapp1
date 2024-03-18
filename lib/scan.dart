@@ -15,7 +15,7 @@ class _ScanState extends State<Scan> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: Colors.black87,
       body: Center(
         child: Container(height: 700,width: 500,color: Colors.black,
           child: Column( mainAxisAlignment: MainAxisAlignment.center,

@@ -12,7 +12,7 @@ class _CamState extends State<Cam> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.teal,
+      backgroundColor: Colors.black87,
       body: Center(
         child: Container(
           width: 500,

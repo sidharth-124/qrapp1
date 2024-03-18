@@ -42,7 +42,7 @@ class _RegState extends State<Reg> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.black87,
         body: Center(
             child: Container(
           color: Colors.black,
@@ -66,7 +66,6 @@ class _RegState extends State<Reg> {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     labelText: 'Enter your name.',
-                    labelStyle: TextStyle(color: Colors.white),
                   ),
                 ),
               ),
