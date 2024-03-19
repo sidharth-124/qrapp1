@@ -25,6 +25,7 @@ class _LoginState extends State<Login> {
           'password': _password.text,
         }));
     var decodeData=jsonDecode(response.body);
+    print(decodeData);
     if (response.statusCode == 200) {
       print('success');
       Navigator.push(context, MaterialPageRoute(builder: (context) => Scan()));
@@ -60,6 +61,7 @@ class _LoginState extends State<Login> {
                 SizedBox(
                   width: 400,
                   child: TextField(
+                    controller:_rollno ,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Enter your Roll no.',
@@ -72,6 +74,7 @@ class _LoginState extends State<Login> {
                 SizedBox(
                   width: 400,
                   child: TextField(
+                    controller: _password,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       labelText: 'Enter your password',
