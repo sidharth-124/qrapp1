@@ -44,6 +44,8 @@ class _LoginState extends State<Login> {
             color: Colors.white,
             height: 700,
             width: 500,
+
+            
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
